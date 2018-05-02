@@ -22,10 +22,9 @@ app.error = function( exception, request, response ) {
 
 app.intent('urvish',
   {
-	"slots":[{"date":"AMAZON.DATE"},
-			 {"sObject":"sObject"}]
+	"slots":{"date":"AMAZON.DATE"}
 	,"utterances":[ 
-		"what are {date} open {sObject}"]
+		"what are {date} open"]
   },
   function(request,response) {
     var date = request.slot('date');
