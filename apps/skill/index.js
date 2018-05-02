@@ -37,7 +37,7 @@ app.intent('urvish',
     } else {
     	try{
 			var request = require('sync-request');
-			var res = request('GET', ENDPOINT ,{
+			var res = request('GET', ENDPOINT +'?Date='+date,{
 				timeout:3000
 			});
 			
