@@ -43,7 +43,7 @@ app.intent('urvish',
 	} else if(!_.isEmpty(date) && !_.isEmpty(toObject)) {
     	try{
 			var request = require('sync-request');
-			var res = request('GET', ENDPOINT +'?Date='+date+'?toObject='+toObject,{
+			var res = request('GET', ENDPOINT +'?Date='+date+'&toObject='+toObject,{
 				timeout:3000
 			});
 			
