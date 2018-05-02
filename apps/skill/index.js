@@ -22,28 +22,22 @@ app.error = function( exception, request, response ) {
 
 app.intent('urvish',
   {
-	"slots":[{"date":"AMAZON.DATE"},
-			  {"sObject":"sObject"}]
+	"slots":{"date":"AMAZON.DATE"}
 	,"utterances":[ 
-		"what are {date} open {sObject}"]
+		"what are {date} open"]
   },
   function(request,response) {
-	var date = request.slot('date');
-	var sObject = request.slot('sObject');
+    var date = request.slot('date');
     //response.say("You asked for the number " + jobnumber);
 
     if (_.isEmpty(date)) {
       	var prompt = 'I didn\'t hear a Date. Tell me a Date.';
       	response.say(prompt).reprompt(reprompt).shouldEndSession(false);
       	return true;
-    } else if(_.isEmpty(sObject)){
-		var prompt = 'I didn\'t hear a Object. Tell me a Object.';
-      	response.say(prompt).reprompt(reprompt).shouldEndSession(false);
-      	return true;
-	} else if(!_.isEmpty(date) && !_.isEmpty(sObject)) {
+    } else {
     	try{
 			var request = require('sync-request');
-			var res = request('GET', ENDPOINT +'?Date='+date+'?sObject='+sObject,{
+			var res = request('GET', ENDPOINT +'?Date='+date,{
 				timeout:3000
 			});
 			
