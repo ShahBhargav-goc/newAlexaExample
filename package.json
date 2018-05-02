@@ -1,0 +1,30 @@
+{
+  "name": "targetrecruit",
+  "version": "1.0.0",
+  "description": "alexa service for Atlas ",
+  "main": "server.js",
+  "dependencies": {
+    "alexa-app-server": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShahBhargav-goc/newAlexaExample.git"
+  },
+  "keywords": [
+    "nodejs",
+    "get",
+    "job",
+    "details"
+  ],
+  "author": "NPM @Bhargav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShahBhargav-goc/newAlexaExample/issues"
+  },
+  "homepage": "https://github.com/ShahBhargav-goc/newAlexaExample#readme"
+}

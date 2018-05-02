@@ -1,0 +1,3 @@
+[submodule "apps/skill"]
+	path = apps/skill
+	url = https://github.com/ShahBhargav-goc/newAlexaExample.git

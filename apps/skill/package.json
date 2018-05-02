@@ -1,0 +1,24 @@
+{
+  "name": "skill",
+  "version": "1.0.0",
+  "description": "skill for Atlas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShahBhargav-goc/newAlexaExample.git"
+  },
+  "author": "NPM @sanjay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShahBhargav-goc/newAlexaExample/issues"
+  },
+  "homepage": "https://github.com/ShahBhargav-goc/newAlexaExample#readme",
+  "dependencies": {
+    "alexa-app": "^4.0.1",
+    "sync-request": "^4.1.0"
+  },
+  "devDependencies": {}
+}
