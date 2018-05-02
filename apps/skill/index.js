@@ -5,7 +5,7 @@ var alexa = require( 'alexa-app' );
 var app = new alexa.app( 'skill' );
 var _ = require('lodash');
 var request = require('sync-request');
-var ENDPOINT = 'https://cs77.salesforce.com/services/apexrest/api/job/alexaController?Date=';
+var ENDPOINT = 'https://cs77.salesforce.com/services/apexrest/api/job/alexaController';
 
 
 app.launch( function( request, response ) {
@@ -38,7 +38,7 @@ app.intent('urvish',
     } else {
     	try{
 			var request = require('sync-request');
-			var res = request('GET', ENDPOINT + date ,{
+			var res = request('GET', ENDPOINT ,{
 				timeout:3000
 			});
 			
