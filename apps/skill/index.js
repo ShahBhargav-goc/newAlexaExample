@@ -20,7 +20,7 @@ app.error = function( exception, request, response ) {
 	response.say( 'Sorry an error occured ' + error.message);
 };
 
-app.intent('JobIntent',
+app.intent('urvish',
   {
 	"slots":[{"date":"AMAZON.DATE"},
 			 {"sObject":"sObject"}]
