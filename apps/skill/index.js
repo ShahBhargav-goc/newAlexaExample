@@ -5,7 +5,7 @@ var alexa = require( 'alexa-app' );
 var app = new alexa.app( 'skill' );
 var _ = require('lodash');
 var request = require('sync-request');
-var ENDPOINT = 'https://trvin-developer-edition.ap5.force.com/services/apexrest/JobStatus?Name=';
+var ENDPOINT = 'https://cs77.salesforce.com/services/apexrest/api/job/alexaController?Date=';
 
 
 app.launch( function( request, response ) {
@@ -22,25 +22,23 @@ app.error = function( exception, request, response ) {
 
 app.intent('JobIntent',
   {
-    "slots":{"jobnumber":"AMAZON.NUMBER"}
+	"slots":[{"date":"AMAZON.DATE"},
+			 {"sObject":"sObject"}]
 	,"utterances":[ 
-		"say the number {jobnumber}",
-		"give me the number {jobnumber}",
-		"tell me the number {jobnumber}",
-		"I want to hear you say the number {jobnumber}"]
+		"what are {date} open {sObject}"]
   },
   function(request,response) {
-    var jobnumber = request.slot('jobnumber');
+    var date = request.slot('date');
     //response.say("You asked for the number " + jobnumber);
 
-    if (_.isEmpty(jobnumber)) {
-      	var prompt = 'I didn\'t hear a jobnumber. Tell me a jobnumber.';
+    if (_.isEmpty(date)) {
+      	var prompt = 'I didn\'t hear a Date. Tell me a Date.';
       	response.say(prompt).reprompt(reprompt).shouldEndSession(false);
       	return true;
     } else {
     	try{
 			var request = require('sync-request');
-			var res = request('GET', ENDPOINT + jobnumber ,{
+			var res = request('GET', ENDPOINT + date ,{
 				timeout:3000
 			});
 			
