@@ -20,7 +20,7 @@ app.error = function( exception, request, response ) {
 	response.say( 'Sorry an error occured ' + error.message);
 };
 
-app.intent('urvish',
+app.intent('sObject',
   {
 	"slots":{"date":"AMAZON.DATE",
 			 "toObject":"toObject"}
