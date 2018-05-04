@@ -50,7 +50,7 @@ app.intent('sObject',
 	if(!_.isEmpty(date) && !_.isEmpty(toObject) && _.isEmpty(hotJob) && _.isEmpty(picklistValue) && _.isEmpty(fieldName)) {
     	try{
 			var request = require('sync-request');
-			var res = request('GET', ENDPOINT +'?Date='+date+'&toObject='+toObject,{
+			var res = request('GET', ENDPOINT +'?toObject='+toObject+'&Date='+date,{
 				timeout:3000
 			});
 			
@@ -66,7 +66,22 @@ app.intent('sObject',
 	}else if(!_.isEmpty(hotJob) && !_.isEmpty(toObject) && _.isEmpty(date) && _.isEmpty(picklistValue) && _.isEmpty(fieldName)) {
 		try{
 			var request = require('sync-request');
-			var res = request('GET', ENDPOINT +'?hotJob='+hotJob+'&toObject='+toObject,{
+			var res = request('GET', ENDPOINT +'?toObject='+toObject+'&hotJob='+hotJob,{
+				timeout:3000
+			});
+			
+			var s = JSON.parse(res.getBody());
+			console.log(s);
+			response.say(s);
+		}catch(e){
+			console.log(e.message);
+			response.say('Sorry, Some error occured ');
+		}
+      	return true;
+	}else if(_.isEmpty(hotJob) && !_.isEmpty(toObject) && !_.isEmpty(date) && !_.isEmpty(picklistValue) && !_.isEmpty(fieldName)) {
+		try{
+			var request = require('sync-request');
+			var res = request('GET', ENDPOINT +'?toObject='+toObject+'&Date='+date+'&picklistValue='+picklistValue+'&fieldName='+fieldName,{
 				timeout:3000
 			});
 			
